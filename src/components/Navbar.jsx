@@ -8,11 +8,6 @@ const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
 
-  const toggleResume = () => {
-    const resumeUrl = '/Resume.pdf';
-    window.open(resumeUrl);
-  };
-
   useEffect(() => {
     if (toggle) {
       setActive('');
@@ -37,13 +32,6 @@ const Navbar = () => {
           <a href={`#${link.id}`}>{link.title}</a>
         </li>
       ))}
-      <li
-        className={`text-${
-          isSecondary ? 'secondary' : 'white'
-        } hover:text-white text-[20px] font-medium cursor-pointer`}
-      >
-        <button onClick={toggleResume}>Resume</button>
-      </li>
     </ul>
   );
 
